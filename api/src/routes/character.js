@@ -12,7 +12,7 @@ router.get('/characters', async (req, res) =>{
         let characterName = await charactersTotal.filter(el => el.name.toLowerCase().includes(name.toLowerCase()));
         characterName.length ?
         res.status(200).send(characterName) : 
-        res.status(404).send('El personaje no se encontro');
+        res.status(404).send('Character was not found');
     } else {
         res.status(200).send(charactersTotal)
     }
@@ -45,7 +45,18 @@ router.post('/character', async (req, res) => {
 
     characterCreated.addOccupation(occupationDb);
 
-    res.send('Personaje creado exitosamente')
+    res.send('Character created successfully!!')
 });
+
+router.get('/characters/:id', async(req, res) => {
+    const {id} = req.params;
+    const charactersTotal = await getAllCharacters();
+    if(id) {
+        let characterId = await charactersTotal.filter(el => el.id == id);
+        characterId.length?
+        res.status(200).json(characterId):
+        res.status(404).send('Character was not found')
+    }
+})
 
 module.exports = router;
