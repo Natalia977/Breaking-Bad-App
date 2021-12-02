@@ -5,8 +5,8 @@ export const OCCUPATIONS_LOCAL_URL = 'http://localhost:3001/occupations';
 
 
 export const GET_CHARACTERS = 'GET_CHARACTERS';
-// export const FILTER_BY_BREED = 'FILTER_BY_BREED';
-// export const FILTER_CREATED_DB = 'FILTER_CREATED_DB';
+export const FILTER_BY_STATUS = 'FILTER_BY_STATUS';
+export const FILTER_CREATED_DB = 'FILTER_CREATED_DB';
 // export const GET_TEMPERAMENTS = 'GET_TEMPERAMENTS';
 // export const POST_BREED = 'CREATE_BREED';
 // export const ORDER_BY_BREED = 'ORDER_BY_BREED';
